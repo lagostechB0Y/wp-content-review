@@ -48,6 +48,16 @@ class PostStatusHooks {
             return $data;
         }
 
+        // Skip handling when restoring/untrashing posts. Restores should preserve original status.
+        // Detect common restore signals: admin action 'untrash' and original_post_status === 'trash'.
+        if ( isset( $_REQUEST['action'] ) && in_array( sanitize_text_field( wp_unslash( $_REQUEST['action'] ) ), [ 'untrash', 'untrash_post' ], true ) ) {
+            return $data;
+        }
+
+        if ( isset( $postarr['original_post_status'] ) && $postarr['original_post_status'] === 'trash' ) {
+            return $data;
+        }
+
         // Allow editors/admins
         if ( $this->capabilityGuard->canPublish( get_current_user_id() ) ) {
             return $data;
