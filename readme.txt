@@ -5,7 +5,7 @@ Author URI: https://lagostechboy.com
 Tags: editorial workflow, content approval, multi-author, editorial review, publishing workflow, admin control
 Requires at least: 6.0
 Tested up to: 6.9
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 Requires PHP: 8.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -141,6 +141,10 @@ Yes. The plugin is built with a clean architecture that allows developers to ext
 
 == Changelog ==
 
+= 1.0.2 =
+* Fixed issue where restoring a trashed post caused an error
+* Improved workflow handling for system-triggered post state changes
+
 = 1.0.1 =
 * Minor security improvements
 * Internal workflow refinements
@@ -157,8 +161,9 @@ Yes. The plugin is built with a clean architecture that allows developers to ext
 
 == Upgrade Notice ==
 
-= 1.0.1 =
-Includes security hardening and workflow improvements.
+= 1.0.2 =
+* Fixed issue where restoring a trashed post caused an error
+* Improved workflow handling for system-triggered post state changes
 
 ---
 

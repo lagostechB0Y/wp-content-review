@@ -2,7 +2,7 @@
 /**
  * Plugin Name:       Content Flow Manager
  * Description:       Adds an editorial content review workflow to WordPress.
- * Version:           1.0.1
+ * Version:           1.0.2
  * Requires at least: 6.0
  * Requires PHP:      8.0
  * Author:            Lagostechboy (classic40)
@@ -21,7 +21,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 define( 'WPCR_PATH', plugin_dir_path( __FILE__ ) );
 define( 'WPCR_URL', plugin_dir_url( __FILE__ ) );
-define( 'WPCR_VERSION', '1.0.1' );
+define( 'WPCR_VERSION', '1.0.2' );
 
 /**
  * PSR-4 style autoloader for the Lagostechboy\EditorialWorkflow\ namespace.
