@@ -40,7 +40,7 @@ class AdminNotices {
             return;
         }
 
-        // Optional: limit notice to users who can edit posts
+        // limit notice to users who can edit posts
         if ( ! current_user_can( 'edit_posts' ) ) {
             return;
         }
@@ -59,10 +59,11 @@ class AdminNotices {
      * Show approval or rejection status with notes.
      */
     private function showReviewStatusNotice(): void {
-        // Only show on post edit screens
+        // Only show on the post edit screen (post.php). Limiting to post.php reduces
+        // the surface area for probing via edit.php where an arbitrary post ID could be supplied.
         global $pagenow, $post;
         
-        if ( ! in_array( $pagenow, [ 'post.php', 'edit.php' ], true ) ) {
+        if ( 'post.php' !== $pagenow ) {
             return;
         }
 
@@ -80,6 +81,11 @@ class AdminNotices {
 
         $post = get_post( $post_id );
         if ( ! $post ) {
+            return;
+        }
+
+        // ensure the current user has permission to view/edit this specific post.
+        if ( ! current_user_can( 'edit_post', $post_id ) ) {
             return;
         }
 

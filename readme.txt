@@ -59,9 +59,9 @@ and can notify editors (logs via WP cron for now).
 = 1.0.1 =
 This release includes a minor security fix.
 
+
 == Additional Notes for Developers ==
 * Namespace: Lagostechboy\EditorialWorkflow
 * Autoloaded via PSR-4 compliant function
 * Repository: https://github.com/lagostechb0y/content-flow-manager
 * GPL licensed
-
